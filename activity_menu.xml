@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="50dp"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MenuActivity"
+    android:background="#437bff"
+    android:contextClickable="true">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:id="@+id/startbutton"
+        android:clickable="true"
+        android:textSize="40dp"
+        android:layout_marginTop="39dp"
+        android:textColor="#ffffff"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/roundbutton"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/optionsbutton"
+        android:layout_alignStart="@+id/optionsbutton"
+        android:layout_alignRight="@+id/optionsbutton"
+        android:layout_alignEnd="@+id/optionsbutton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Options"
+        android:id="@+id/optionsbutton"
+        android:clickable="true"
+        android:onClick="activity_options.xml"
+        android:textSize="40dp"
+        android:layout_below="@+id/startbutton"
+        android:layout_marginTop="45dp"
+        android:layout_alignLeft="@+id/leaderboardbutton"
+        android:layout_alignStart="@+id/leaderboardbutton"
+        android:textColor="#ffffff"
+        android:background="@drawable/roundbutton"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignRight="@+id/leaderboardbutton"
+        android:layout_alignEnd="@+id/leaderboardbutton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="High Scores"
+        android:id="@+id/leaderboardbutton"
+        android:clickable="true"
+        android:textSize="40dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/roundbutton"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Block Attack"
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:textSize="55dp"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
