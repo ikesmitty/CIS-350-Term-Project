@@ -24,10 +24,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/addDispScore"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        android:textIsSelectable="false" />
+        android:textIsSelectable="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeleft"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp" />
 
 </RelativeLayout>
