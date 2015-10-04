@@ -27,6 +27,7 @@ public class GameStart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_start);
         Button clickitbtn = (Button) findViewById(R.id.ClickIt);
+        clickitbtn.setEnabled(true);
         final MyCountDownTimer countDownTimer = new MyCountDownTimer(startTime, interval);
         start = (TextView) this.findViewById(R.id.timeleft);
         start.setText(start.getText() + String.valueOf(startTime / 1000));
@@ -65,14 +66,9 @@ public class GameStart extends AppCompatActivity {
             clickitbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    boolean checks = getTimerStart();
-                    if(checks = true) {
                         score = score + 1;
                         TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                         scoredisp.setText("Score: " + score);
-                    }else{
-                        score = score;
-                    }
                 }
             });
         }
@@ -84,6 +80,8 @@ public class GameStart extends AppCompatActivity {
         public void onFinish(){
             start.setText("Time's up!");
             timerHasStarted = false;
+            Button tapbutton = (Button) findViewById(R.id.ClickIt);
+            tapbutton.setEnabled(false);
         }
 
         @Override
