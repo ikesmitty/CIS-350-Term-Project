@@ -237,47 +237,79 @@ public class GameStart extends AppCompatActivity {
             Button button5 = (Button) findViewById(R.id.button5);
             Button button6 = (Button) findViewById(R.id.button6);
             int x = randButtonShow();
-            lastShown = x;
 
             //Makes all buttons invisible and un-clickable
             buttonsOff();
 
-            int chkDup = 1;
+            int newbutton = 0;
+
             //Randomly displays a button for the user to click
-            while(chkDup != 0) {
+            while(newbutton != 1) {
                 if (x == 1) {
+                    //Checks if button was shown before
                     if (lastShown != x) {
                         button1.setVisibility(View.VISIBLE);
                         button1.setEnabled(true);
+                        //Sets last button shown and exits our loop
                         lastShown = x;
-                        chkDup = 0;
+                        newbutton = 1;
                     } else {
                         x = randButtonShow();
                     }
                 } else if (x == 2) {
+                    //Checks if button was shown before
                     if (lastShown != x) {
                         button2.setVisibility(View.VISIBLE);
                         button2.setEnabled(true);
+                        //Sets last button shown and exits our loop
+                        lastShown = x;
+                        newbutton = 1;
+                    } else {
+                        x = randButtonShow();
                     }
                 } else if (x == 3) {
+                    //Checks if button was shown before
                     if (lastShown != x) {
                         button3.setVisibility(View.VISIBLE);
                         button3.setEnabled(true);
+                        //Sets last button shown and exits our loop
+                        lastShown = x;
+                        newbutton = 1;
+                    } else {
+                        x = randButtonShow();
                     }
                 } else if (x == 4) {
+                    //Checks if button was shown before
                     if (lastShown != x) {
                         button4.setVisibility(View.VISIBLE);
                         button4.setEnabled(true);
+                        //Sets last button shown and exits our loop
+                        lastShown = x;
+                        newbutton = 1;
+                    } else {
+                        x = randButtonShow();
                     }
                 } else if (x == 5) {
+                    //Checks if button was shown before
                     if (lastShown != x) {
                         button5.setVisibility(View.VISIBLE);
                         button5.setEnabled(true);
+                        //Sets last button shown and exits our loop
+                        lastShown = x;
+                        newbutton = 1;
+                    } else {
+                        x = randButtonShow();
                     }
                 } else if (x == 6) {
+                    //Checks if button was shown before
                     if (lastShown != x) {
                         button6.setVisibility(View.VISIBLE);
                         button6.setEnabled(true);
+                        //Sets last button shown and exits our loop
+                        lastShown = x;
+                        newbutton = 1;
+                    } else {
+                        x = randButtonShow();
                     }
                 }
             }
