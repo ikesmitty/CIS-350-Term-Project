@@ -19,16 +19,78 @@
         android:textStyle="bold"
         android:textSize="40dp" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:text="1) "
+        android:id="@+id/editText1"
         android:layout_marginTop="39dp"
-        android:text="Scores will appear here in a list view from an array"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
         android:layout_below="@+id/textView2"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2) "
+        android:id="@+id/editText2"
+        android:layout_marginTop="79dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3) "
+        android:id="@+id/editText3"
+        android:layout_marginTop="119dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4) "
+        android:id="@+id/editText4"
+        android:layout_marginTop="159dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5) "
+        android:id="@+id/editText5"
+        android:layout_marginTop="199dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>
