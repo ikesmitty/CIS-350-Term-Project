@@ -1,6 +1,7 @@
 package com.example.isaacsmith.tba;
 
 
+import android.content.DialogInterface;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ public class GameStart extends AppCompatActivity {
     public TextView start;
 
     //long integers for our timer time and interval on ticks
-    private final long startTime = 30 * 1000;
+    private final long startTime = 3 * 1000;
     private final long interval = 1 * 1000;
 
     public int lastShown = 0;
@@ -92,6 +93,14 @@ public class GameStart extends AppCompatActivity {
      *********************************************************/
     public class MyCountDownTimer extends CountDownTimer {
 
+        //Gets the button id and sets a button to it
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
+        Button button5 = (Button) findViewById(R.id.button5);
+        Button button6 = (Button) findViewById(R.id.button6);
+
         /****************************************************************
          * Class the is called on creation of the timer
          * @param startTime Time the timer will start at
@@ -103,14 +112,7 @@ public class GameStart extends AppCompatActivity {
             //starts the timer
             start();
             timerHasStarted = true;
-
-            //Initializes all the buttons in the view
-            Button button1 = (Button) findViewById(R.id.button1);
-            Button button2 = (Button) findViewById(R.id.button2);
-            Button button3 = (Button) findViewById(R.id.button3);
-            Button button4 = (Button) findViewById(R.id.button4);
-            Button button5 = (Button) findViewById(R.id.button5);
-            Button button6 = (Button) findViewById(R.id.button6);
+            randButtonShow();
 
             //To Do: Make a new button be displayed on click instead of on tick
             //Can be done inside of the onclick listeners
@@ -123,6 +125,10 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    cancel();
+                    start();
+                    buttonsOff();
+                    randButtonShow();
                 }
             });
 
@@ -132,6 +138,10 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    cancel();
+                    start();
+                    buttonsOff();
+                    randButtonShow();
                 }
             });
             button3.setOnClickListener(new View.OnClickListener() {
@@ -140,6 +150,10 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    cancel();
+                    start();
+                    buttonsOff();
+                    randButtonShow();
                 }
             });
             button4.setOnClickListener(new View.OnClickListener() {
@@ -148,6 +162,10 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    cancel();
+                    start();
+                    buttonsOff();
+                    randButtonShow();
                 }
             });
             button5.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +174,10 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    cancel();
+                    start();
+                    buttonsOff();
+                    randButtonShow();
                 }
             });
             button6.setOnClickListener(new View.OnClickListener() {
@@ -164,6 +186,10 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    cancel();
+                    start();
+                    buttonsOff();
+                    randButtonShow();
                 }
             });
         }
@@ -180,15 +206,6 @@ public class GameStart extends AppCompatActivity {
          * Makes all buttons invisible and unclickable
          **********************************************/
         public void buttonsOff(){
-
-            //Gets the button id and sets a button to it
-            Button button1 = (Button) findViewById(R.id.button1);
-            Button button2 = (Button) findViewById(R.id.button2);
-            Button button3 = (Button) findViewById(R.id.button3);
-            Button button4 = (Button) findViewById(R.id.button4);
-            Button button5 = (Button) findViewById(R.id.button5);
-            Button button6 = (Button) findViewById(R.id.button6);
-
             //Makes all buttons invisible and un-clickable
             button1.setVisibility(View.INVISIBLE);
             button2.setVisibility(View.INVISIBLE);
@@ -196,47 +213,22 @@ public class GameStart extends AppCompatActivity {
             button4.setVisibility(View.INVISIBLE);
             button5.setVisibility(View.INVISIBLE);
             button6.setVisibility(View.INVISIBLE);
+
+            button1.setEnabled(false);
+            button2.setEnabled(false);
+            button3.setEnabled(false);
+            button4.setEnabled(false);
+            button5.setEnabled(false);
+            button6.setEnabled(false);
         }
 
         /**************************************************************************
          * Returns a random int which will be used to randomly display the buttons
          * @return random integer 1-6
          *************************************************************************/
-        public int randButtonShow(){
+        public void randButtonShow(){
             Random rand = new Random();
-            int i = rand.nextInt(6) + 1;
-            return i;
-        }
-
-        /************************************************
-         * On finish of the timer this method is called
-         ***********************************************/
-        @Override
-        public void onFinish(){
-            //Sets display text that the time is up
-            start.setText("Time's up!");
-
-            //Sets timer start variable to false and makes all buttons on the screen
-            //un-clickable
-            timerHasStarted = false;
-            buttonsOff();
-        }
-
-        /*******************************************************
-         * Method called every seconds as the timer counts down
-         * @param millisUntilFinished
-         ******************************************************/
-        @Override
-        public void onTick(long millisUntilFinished){
-            //Sets our text to the amount of time remaining
-            start.setText("" + millisUntilFinished / 1000);
-            Button button1 = (Button) findViewById(R.id.button1);
-            Button button2 = (Button) findViewById(R.id.button2);
-            Button button3 = (Button) findViewById(R.id.button3);
-            Button button4 = (Button) findViewById(R.id.button4);
-            Button button5 = (Button) findViewById(R.id.button5);
-            Button button6 = (Button) findViewById(R.id.button6);
-            int x = randButtonShow();
+            int x = rand.nextInt(6) + 1;
 
             //Makes all buttons invisible and un-clickable
             buttonsOff();
@@ -254,7 +246,7 @@ public class GameStart extends AppCompatActivity {
                         lastShown = x;
                         newbutton = 1;
                     } else {
-                        x = randButtonShow();
+                        randButtonShow();
                     }
                 } else if (x == 2) {
                     //Checks if button was shown before
@@ -265,7 +257,7 @@ public class GameStart extends AppCompatActivity {
                         lastShown = x;
                         newbutton = 1;
                     } else {
-                        x = randButtonShow();
+                        randButtonShow();
                     }
                 } else if (x == 3) {
                     //Checks if button was shown before
@@ -276,7 +268,7 @@ public class GameStart extends AppCompatActivity {
                         lastShown = x;
                         newbutton = 1;
                     } else {
-                        x = randButtonShow();
+                        randButtonShow();
                     }
                 } else if (x == 4) {
                     //Checks if button was shown before
@@ -287,7 +279,7 @@ public class GameStart extends AppCompatActivity {
                         lastShown = x;
                         newbutton = 1;
                     } else {
-                        x = randButtonShow();
+                        randButtonShow();
                     }
                 } else if (x == 5) {
                     //Checks if button was shown before
@@ -298,7 +290,7 @@ public class GameStart extends AppCompatActivity {
                         lastShown = x;
                         newbutton = 1;
                     } else {
-                        x = randButtonShow();
+                        randButtonShow();
                     }
                 } else if (x == 6) {
                     //Checks if button was shown before
@@ -309,10 +301,34 @@ public class GameStart extends AppCompatActivity {
                         lastShown = x;
                         newbutton = 1;
                     } else {
-                        x = randButtonShow();
+                        randButtonShow();
                     }
                 }
             }
+        }
+
+        /************************************************
+         * On finish of the timer this method is called
+         ***********************************************/
+        @Override
+        public void onFinish(){
+            //Sets display text that the time is up
+            start.setText("You Lose!");
+
+            //Sets timer start variable to false and makes all buttons on the screen
+            //un-clickable
+            timerHasStarted = false;
+            buttonsOff();
+        }
+
+        /*******************************************************
+         * Method called every seconds as qthe timer counts down
+         * @param millisUntilFinished
+         ******************************************************/
+        @Override
+        public void onTick(long millisUntilFinished){
+            //Sets our text to the amount of time remaining
+            start.setText("" + millisUntilFinished / 1000);
         }
     }
 }
