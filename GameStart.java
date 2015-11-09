@@ -2,6 +2,7 @@ package com.example.isaacsmith.tba;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,7 +34,7 @@ public class GameStart extends AppCompatActivity {
     public TextView start;
 
     //long integers for our timer time and interval on ticks
-    private final long startTime = 3 * 1000;
+    private long startTime;
     private final long interval = 1 * 1000;
 
     public int lastShown = 0;
@@ -46,6 +47,11 @@ public class GameStart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_start);
+
+        Intent i = getIntent();
+        int time = i.getIntExtra("time", 0);
+
+        startTime = time;
         //creates and starts our countdowntimer
         final MyCountDownTimer countDownTimer = new MyCountDownTimer(startTime, interval);
 
