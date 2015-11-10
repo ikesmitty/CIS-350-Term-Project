@@ -6,15 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 
 public class HighScores extends AppCompatActivity {
     public static HighScores hs = new HighScores();
@@ -65,35 +59,33 @@ public class HighScores extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //Saves the highscore into the designated file
-    //not currently working
-    public void saveHighScore (String score) throws FileNotFoundException {
-    /*
-        try {
-            FileOutputStream fileOut = openFileOutput("HighScoresBlockAttack.txt", Context.MODE_PRIVATE);
-            OutputStreamWriter outStream = new OutputStreamWriter(fileOut);
-            outStream.write(score);
-            outStream.close();
 
+    //Saves the highscore into the designated file
+    public void saveHighScore (String score) throws FileNotFoundException {
+        try {
+            FileOutputStream fos = openFileOutput("/blockattacksaves.txt", Context.MODE_WORLD_READABLE);
+            fos.write(score.getBytes());
+            fos.close();
+            Toast.makeText(getApplicationContext(), "Saved Score", Toast.LENGTH_SHORT).show();
         } catch (java.io.IOException e) {
             e.printStackTrace();
         }
-*/
     }
 
 
     //Reads the highscore from the designated file and returns a string of the value
-    //not currently working
     public String readHighScore(int place) throws IOException {
-    /*
         String currentScores;
         String[] readScores = new String[5];
+        File file = new File("blockattacksaves.txt");
+
+
 
         try{
-            FileInputStream fileIn = new FileInputStream("HighScoresBlockAttack.txt");
-            InputStreamReader inStream = new InputStreamReader(fileIn);
-            BufferedReader br = new BufferedReader(inStream);
-            StringBuilder sb = new StringBuilder();
+            FileInputStream fis = openFileInput(file.getAbsolutePath());
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuffer sb = new StringBuffer();
 
             while ((currentScores = br.readLine())!= null) {
                 sb.append(currentScores + "\n");
@@ -107,18 +99,13 @@ public class HighScores extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
-    }
-    */
-        return "";//readScores[place];
+        return readScores[place];
     }
 
     //Takes the score as an input and checks if it is a high score
-    //If it is a high score, the method will call saveHighScore();
-    //Not currently working
+    //The method will call saveHighScore() when the sorting is complete
     public void checkHighScores(int newScore) throws IOException {
-        /*
+
         StringBuilder finalScores = new StringBuilder();
         for (int i = 0; i < 5; i++){
             if (i != 0){
@@ -134,7 +121,7 @@ public class HighScores extends AppCompatActivity {
         }
 
         saveHighScore(finalScores.toString());
-        */
+
     }
 
 
