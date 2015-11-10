@@ -1,4 +1,4 @@
-Package 
+package com.example.isaacsmith.tba;
 
 import junit.framework.TestCase;
 
