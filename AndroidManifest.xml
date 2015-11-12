@@ -32,6 +32,18 @@
             android:name=".GameStart"
             android:label="@string/title_activity_game_start" >
         </activity>
+        <activity
+            android:name=".DifficultySet"
+            android:label="@string/title_activity_difficulty_set" >
+        </activity>
+        <activity
+            android:name=".ChooseGame"
+            android:label="@string/title_activity_choose_game" >
+        </activity>
+        <activity
+            android:name=".TimeAttack"
+            android:label="@string/title_activity_time_attack" >
+        </activity>
     </application>
 
 </manifest>
