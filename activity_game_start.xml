@@ -27,7 +27,7 @@
         android:textColor="#FFFFFF"
         android:textSize="30dp" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A"
@@ -41,9 +41,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="88dp"
-        android:background="@drawable/roundbutton" />
+        android:background="@drawable/alien"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="E"
@@ -55,8 +57,8 @@
         android:textSize="10dp"
         android:layout_below="@+id/button5"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/roundbutton"/>
-    <Button
+        android:background="@drawable/alien"/>
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="C"
@@ -69,9 +71,9 @@
         android:layout_alignTop="@+id/button5"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/roundbutton"/>
+        android:background="@drawable/alien"/>
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="D"
@@ -84,8 +86,8 @@
         android:layout_below="@+id/button1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/roundbutton"/>
-    <Button
+        android:background="@drawable/alien"/>
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="B"
@@ -97,8 +99,8 @@
         android:textSize="10dp"
         android:layout_alignTop="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/roundbutton"/>
-    <Button
+        android:background="@drawable/alien"/>
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="F"
@@ -111,6 +113,6 @@
         android:layout_below="@+id/button3"
         android:layout_alignLeft="@+id/button3"
         android:layout_alignStart="@+id/button3"
-        android:background="@drawable/roundbutton"/>
+        android:background="@drawable/alien"/>
 
 </RelativeLayout>
