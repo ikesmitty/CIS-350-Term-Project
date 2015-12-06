@@ -10,7 +10,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.Random;
 
@@ -38,6 +41,7 @@ public class GameStart extends AppCompatActivity {
     private final long interval = 1 * 1000;
 
     public int lastShown = 0;
+    Animation shake;
 
     /**********************************************************
      * Displays the game screen and starts our countdown timer
@@ -47,7 +51,6 @@ public class GameStart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_start);
-
         Intent i = getIntent();
         int time = i.getIntExtra("time", 0);
 
@@ -100,19 +103,19 @@ public class GameStart extends AppCompatActivity {
     public class MyCountDownTimer extends CountDownTimer {
 
         //Gets the button id and sets a button to it
-        Button button1 = (Button) findViewById(R.id.button1);
-        Button button2 = (Button) findViewById(R.id.button2);
-        Button button3 = (Button) findViewById(R.id.button3);
-        Button button4 = (Button) findViewById(R.id.button4);
-        Button button5 = (Button) findViewById(R.id.button5);
-        Button button6 = (Button) findViewById(R.id.button6);
+        ImageButton button1 = (ImageButton) findViewById(R.id.button1);
+        ImageButton button2 = (ImageButton) findViewById(R.id.button2);
+        ImageButton button3 = (ImageButton) findViewById(R.id.button3);
+        ImageButton button4 = (ImageButton) findViewById(R.id.button4);
+        ImageButton button5 = (ImageButton) findViewById(R.id.button5);
+        ImageButton button6 = (ImageButton) findViewById(R.id.button6);
 
         /****************************************************************
          * Class the is called on creation of the timer
          * @param startTime Time the timer will start at
          * @param interval How many seconds or minutes it counts down by
          ***************************************************************/
-        public  MyCountDownTimer(long startTime, long interval){
+        public MyCountDownTimer(long startTime, long interval){
             super(startTime, interval);
 
             //starts the timer
@@ -131,6 +134,8 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                     cancel();
                     start();
                     buttonsOff();
@@ -144,6 +149,8 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                     cancel();
                     start();
                     buttonsOff();
@@ -156,6 +163,8 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                     cancel();
                     start();
                     buttonsOff();
@@ -168,6 +177,8 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                     cancel();
                     start();
                     buttonsOff();
@@ -180,6 +191,8 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                     cancel();
                     start();
                     buttonsOff();
@@ -192,6 +205,8 @@ public class GameStart extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                     cancel();
                     start();
                     buttonsOff();
