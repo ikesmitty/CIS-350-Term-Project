@@ -41,7 +41,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="88dp"
-        android:background="@drawable/alien"
+        android:background="@drawable/circlealien"
         android:adjustViewBounds="true"
         android:scaleType="fitXY" />
 
@@ -57,7 +57,7 @@
         android:textSize="10dp"
         android:layout_below="@+id/button5"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/alien"/>
+        android:background="@drawable/circlealien"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         android:layout_alignTop="@+id/button5"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/alien"/>
+        android:background="@drawable/circlealien"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -86,7 +86,7 @@
         android:layout_below="@+id/button1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/alien"/>
+        android:background="@drawable/circlealien"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
         android:textSize="10dp"
         android:layout_alignTop="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/alien"/>
+        android:background="@drawable/circlealien"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -113,6 +113,6 @@
         android:layout_below="@+id/button3"
         android:layout_alignLeft="@+id/button3"
         android:layout_alignStart="@+id/button3"
-        android:background="@drawable/alien"/>
+        android:background="@drawable/circlealien"/>
 
 </RelativeLayout>
