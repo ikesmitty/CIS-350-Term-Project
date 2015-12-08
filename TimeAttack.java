@@ -8,7 +8,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.Random;
 
@@ -36,6 +39,7 @@ public class TimeAttack extends AppCompatActivity {
     private final long interval = 1 * 1000;
 
     public int lastShown = 0;
+    Animation shake;
 
     /**********************************************************
      * Displays the game screen and starts our countdown timer
@@ -105,12 +109,12 @@ public class TimeAttack extends AppCompatActivity {
             timerHasStarted = true;
 
             //Initializes all the buttons in the view
-            Button button1 = (Button) findViewById(R.id.button1);
-            Button button2 = (Button) findViewById(R.id.button2);
-            Button button3 = (Button) findViewById(R.id.button3);
-            Button button4 = (Button) findViewById(R.id.button4);
-            Button button5 = (Button) findViewById(R.id.button5);
-            Button button6 = (Button) findViewById(R.id.button6);
+            ImageButton button1 = (ImageButton) findViewById(R.id.button1);
+            ImageButton button2 = (ImageButton) findViewById(R.id.button2);
+            ImageButton button3 = (ImageButton) findViewById(R.id.button3);
+            ImageButton button4 = (ImageButton) findViewById(R.id.button4);
+            ImageButton button5 = (ImageButton) findViewById(R.id.button5);
+            ImageButton button6 = (ImageButton) findViewById(R.id.button6);
 
             //To Do: Make a new button be displayed on click instead of on tick
             //Can be done inside of the onclick listeners
@@ -123,6 +127,8 @@ public class TimeAttack extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                 }
             });
 
@@ -132,6 +138,8 @@ public class TimeAttack extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                 }
             });
             button3.setOnClickListener(new View.OnClickListener() {
@@ -140,6 +148,8 @@ public class TimeAttack extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                 }
             });
             button4.setOnClickListener(new View.OnClickListener() {
@@ -148,6 +158,8 @@ public class TimeAttack extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                 }
             });
             button5.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +168,8 @@ public class TimeAttack extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                 }
             });
             button6.setOnClickListener(new View.OnClickListener() {
@@ -164,6 +178,8 @@ public class TimeAttack extends AppCompatActivity {
                     score = score + 1;
                     TextView scoredisp = (TextView) findViewById(R.id.addDispScore);
                     scoredisp.setText("Score: " + score);
+                    shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+                    v.startAnimation(shake);
                 }
             });
         }
@@ -182,12 +198,12 @@ public class TimeAttack extends AppCompatActivity {
         public void buttonsOff(){
 
             //Gets the button id and sets a button to it
-            Button button1 = (Button) findViewById(R.id.button1);
-            Button button2 = (Button) findViewById(R.id.button2);
-            Button button3 = (Button) findViewById(R.id.button3);
-            Button button4 = (Button) findViewById(R.id.button4);
-            Button button5 = (Button) findViewById(R.id.button5);
-            Button button6 = (Button) findViewById(R.id.button6);
+            ImageButton button1 = (ImageButton) findViewById(R.id.button1);
+            ImageButton button2 = (ImageButton) findViewById(R.id.button2);
+            ImageButton button3 = (ImageButton) findViewById(R.id.button3);
+            ImageButton button4 = (ImageButton) findViewById(R.id.button4);
+            ImageButton button5 = (ImageButton) findViewById(R.id.button5);
+            ImageButton button6 = (ImageButton) findViewById(R.id.button6);
 
             //Makes all buttons invisible and un-clickable
             button1.setVisibility(View.INVISIBLE);
@@ -230,12 +246,12 @@ public class TimeAttack extends AppCompatActivity {
         public void onTick(long millisUntilFinished){
             //Sets our text to the amount of time remaining
             start.setText("" + millisUntilFinished / 1000);
-            Button button1 = (Button) findViewById(R.id.button1);
-            Button button2 = (Button) findViewById(R.id.button2);
-            Button button3 = (Button) findViewById(R.id.button3);
-            Button button4 = (Button) findViewById(R.id.button4);
-            Button button5 = (Button) findViewById(R.id.button5);
-            Button button6 = (Button) findViewById(R.id.button6);
+            ImageButton button1 = (ImageButton) findViewById(R.id.button1);
+            ImageButton button2 = (ImageButton) findViewById(R.id.button2);
+            ImageButton button3 = (ImageButton) findViewById(R.id.button3);
+            ImageButton button4 = (ImageButton) findViewById(R.id.button4);
+            ImageButton button5 = (ImageButton) findViewById(R.id.button5);
+            ImageButton button6 = (ImageButton) findViewById(R.id.button6);
             int x = randButtonShow();
 
             //Makes all buttons invisible and un-clickable
