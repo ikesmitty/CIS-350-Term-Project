@@ -11,6 +11,19 @@ public class Options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
+        ToggleButton toggle = (ToggleButton)findViewById(R.id.mute);
+        final MediaPlayer player = MediaPlayer.create(this, R.raw.piano);
+        toggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(((ToggleButton)v).isChecked()){
+                    player.start();
+                }
+                else{
+                    player.pause();
+                }
+            }
+        });
     }
 
     @Override
