@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.isaacsmith.tba" >
+    package="com.example.isaacsmith.tba">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
+    <permission android:name="com.example.isaacsmith.tba.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.example.isaacsmith.tba.permission.C2D_MESSAGE"/>
 
     <application
+
+        android:name="com.example.isaacsmith.tba.ScoreStorage"
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MenuActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,33 +33,56 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Options"
-            android:label="@string/title_activity_options"
-            android:parentActivityName=".MenuActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.isaacsmith.tba.MenuActivity" />
-        </activity>
-        <activity
-            android:name=".HighScores"
-            android:label="@string/title_activity_high_scores" >
-        </activity>
-        <activity
-            android:name=".GameStart"
-            android:label="@string/title_activity_game_start" >
-        </activity>
+            android:name=".ChooseGame"
+            android:label="@string/title_activity_choose_game"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DifficultySet"
-            android:label="@string/title_activity_difficulty_set" >
-        </activity>
+            android:label="@string/title_activity_difficulty_set"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ChooseGame"
-            android:label="@string/title_activity_choose_game" >
-        </activity>
+            android:name=".GameStart"
+            android:label="@string/title_activity_game_start"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HighScores"
+            android:label="@string/title_activity_high_scores"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Options"
+            android:label="@string/title_activity_options"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".TimeAttack"
-            android:label="@string/title_activity_time_attack" >
-        </activity>
+            android:label="TimeAttack"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="np02JLpP1fEaUKXW1NWHoV4Z0q1RV98OrDdvK6pu" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="tQ8xvZkY4iQ8d0uSAAuqGx8QJ9jtzF31a186LTY3" />
+
+        <service android:name="com.parse.PushService" />
+        <receiver android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.example.isaacsmith.tba" />
+            </intent-filter>
+        </receiver>
+
     </application>
+
 
 </manifest>
