@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.Random;
+import static com.example.isaacsmith.tba.HighScores.saveHighScore;
 
 /*******************************************************************************
  * This class handles all elements of the game and lets the user play until the
@@ -335,9 +336,8 @@ public class GameStart extends AppCompatActivity {
         public void onFinish(){
             
             //Saves the score to database
-            HighScores hs = new HighScores();
             try {
-                hs.saveHighScore(Integer.toString(score));
+                saveHighScore(Integer.toString(score));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
