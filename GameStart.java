@@ -333,6 +333,15 @@ public class GameStart extends AppCompatActivity {
          ***********************************************/
         @Override
         public void onFinish(){
+            
+            //Saves the score to database
+            HighScores hs = new HighScores();
+            try {
+                hs.saveHighScore(Integer.toString(score));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            
             //Sets display text that the time is up
             start.setText("You Lose!");
 
